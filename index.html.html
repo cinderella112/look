@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Memory Pack</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif; /* New font style */
+            text-align: center;
+            margin-top: 100px;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: white;
+        }
+        .hidden-content {
+            display: none; /* Initially hidden */
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            color: #ff4081;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            transition: opacity 1s ease-in-out;
+            opacity: 0;
+        }
+        .hidden-content.show {
+            display: block; /* Show when correct password is entered */
+            opacity: 1;
+        }
+        .input-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: fit-content;
+            margin: auto;
+        }
+        input {
+            font-size: 20px;
+            text-align: center;
+            letter-spacing: 5px;
+            width: 250px;
+            border: 2px solid #ff4081;
+            border-radius: 5px;
+            padding: 5px;
+            outline: none;
+            color: #ff4081;
+            padding-left: 20px;
+        }
+        .hint {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        button {
+            margin-top: 10px;
+            background: #ff4081;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        button:hover {
+            background: #e91e63;
+        }
+        .memory-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+            transition: transform 0.3s;
+        }
+        .memory-photo:hover {
+            transform: scale(1.1);
+        }
+        .memory-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        #end {
+            display: none; /* Hidden initially */
+            font-size: 36px; /* Larger font size for "End" */
+            color: pink; /* Stylish pink color */
+            margin-top: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <h2>💕 Love Memory Pack 💕</h2>
+    <p class="hint">Enter your password:</p>
+    <div class="input-container">
+        <input type="text" id="password" placeholder="C●●●●●●●●●" maxlength="10">
+    </div>
+    <button onclick="checkPassword()">Unlock 💖</button>
+    
+    <div id="memory" class="hidden-content">
+        <h3>💘 Our Special Memories 💘</h3>
+        <div class="memory-container">
+            <!-- Replace with your own image URLs -->
+           <img src="0.jpeg" alt="Memory 0" class="memory-photo">
+            <img src="file:///C:/Users/Dulaj%20Hesara/Downloads/1.jpeg" alt="Memory 1" class="memory-photo">
+            <img src="file:///C:/Users/Dulaj%20Hesara/Downloads/2.jpeg" alt="Memory 2" class="memory-photo">
+            <img src="file:///C:/Users/Dulaj%20Hesara/Downloads/3.jpeg" alt="Memory 3" class="memory-photo">
+            <img src="file:///C:/Users/Dulaj%20Hesara/Downloads/3.5.jpeg" alt="Memory 3.5" class="memory-photo">
+            <img src="file:///C:/Users/Dulaj%20Hesara/Downloads/4.jpeg" alt="Memory 4" class="memory-photo">
+            <img src="file:///C:/Users/Dulaj%20Hesara/Downloads/5.jpeg" alt="Memory 5" class="memory-photo">
+            <img src="file:///C:/Users/Dulaj%20Hesara/Downloads/6.jpeg" alt="Memory 6" class="memory-photo">
+            <img src="file:///C:/Users/Dulaj%20Hesara/Downloads/7.jpeg" alt="Memory 7" class="memory-photo">
+            <img src="file:///C:/Users/Dulaj%20Hesara/Downloads/8.jpeg" alt="Memory 8" class="memory-photo">
+            <img src="file:///C:/Users/Dulaj%20Hesara/Downloads/9.jpeg" alt="Memory 9" class="memory-photo">
+            <img src="file:///C:/Users/Dulaj%20Hesara/Downloads/10.jpeg" alt="Memory 10" class="memory-photo">
+            <img src="file:///C:/Users/Dulaj%20Hesara/Downloads/11.jpeg" alt="Memory 11" class="memory-photo">
+            <img src="file:///C:/Users/Dulaj%20Hesara/Downloads/12.jpeg" alt="Memory 12" class="memory-photo">
+            <img src="file:///C:/Users/Dulaj%20Hesara/Downloads/13.jpeg" alt="Memory 13" class="memory-photo">
+            <img src="file:///C:/Users/Dulaj%20Hesara/Downloads/14.jpeg" alt="Memory 14" class="memory-photo">
+            <img src="file:///C:/Users/Dulaj%20Hesara/Downloads/15.jpeg" alt="Memory 15" class="memory-photo">
+            <img src="file:///C:/Users/Dulaj%20Hesara/Downloads/16.jpeg" alt="Memory 16" class="memory-photo">
+            <img src="file:///C:/Users/Dulaj%20Hesara/Downloads/17.jpeg" alt="Memory 17" class="memory-photo">
+            <img src="file:///C:/Users/Dulaj%20Hesara/Downloads/18.jpeg" alt="Memory 18" class="memory-photo">
+            <img src="file:///C:/Users/Dulaj%20Hesara/Downloads/19.jpeg" alt="Memory 19" class="memory-photo">
+        </div>
+    </div>
+
+    <p id="end">The End 💖</p> <!-- 'End' text -->
+
+    <script>
+        // Set the hint inside the input field as "C"
+        document.getElementById('password').addEventListener('focus', function() {
+            if (this.value === '') {
+                this.value = 'C';
+            }
+        });
+
+        // This function checks the password when the button is clicked
+        function checkPassword() {
+            let input = document.getElementById('password').value;
+            if (input.toLowerCase() === "cinderella") {
+                document.getElementById('memory').classList.add('show');
+                document.getElementById('end').style.display = 'block'; // Show 'End' text
+            } else {
+                alert("❌ Incorrect Password. Try Again!");
+            }
+        }
+    </script>
+</body>
+</html>
